@@ -6,6 +6,7 @@ var app = express();
 app.set('views', __dirname);
 app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
+app.listen(process.env.PORT||3000);
 
 
 //get data
@@ -26,5 +27,6 @@ var con = mongoose.connection;
 con.once('open', function() {
     console.log('connected to mongodbsuccessfully!');
     jobModel.seedJobs();});
-app.listen(process.env.PORT||3000);
+
+
 
