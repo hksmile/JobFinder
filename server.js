@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/public'));
 
 //get data
 app.get('/api/jobs', function(req, res) {
-    mongoose.model('Job').find({}).exec(function(error, collection){
+    jobModel.findJobs({}).then(function(collection){
         res.send(collection);
     })
 });
