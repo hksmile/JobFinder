@@ -67,7 +67,7 @@ describe("db save jobs", function(){
     before(function(done) {
         connectDB('mongodb://localhost/jobfinder')
             .then(resetJobs)
-           // .then(saveTestJob)
+            .then(saveTestJob)
             .then(jobsData.findJobs) //this is just a reference which is why we don't have a parameter
             .then(function setJobs(collection)
             {
